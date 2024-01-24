@@ -17,15 +17,17 @@
   DEALINGS IN THE SOFTWARE.
    
    Based on Neil Kolban's example file: https://github.com/nkolban/ESP32_BLE_Arduino
+
+   YouTube reference: https://www.youtube.com/watch?v=osneajf7Xkg&ab_channel=AndreasSpiess
  */
 
 #include "BLEDevice.h"
 //#include "BLEScan.h"
 
 // The remote service we wish to connect to.
-static  BLEUUID serviceUUID(BLEUUID((uint16_t)0x180D));
+static  BLEUUID serviceUUID(BLEUUID((uint16_t)0x180D)); //Heart rate service 
 // The characteristic of the remote service we are interested in.
-static BLEUUID    charUUID(BLEUUID((uint16_t)0x2A37));
+static BLEUUID    charUUID(BLEUUID((uint16_t)0x2A37)); //Heart rate measurement
 
 static BLEAddress *pServerAddress;
 static boolean doConnect = false;
